@@ -41,16 +41,16 @@ export const helpBackButton = {
 export const helpBugReportButton = {
     name: BUG_REPORT_BUTTON_ID,
     async execute(interaction, client) {
-        const githubButton = new ButtonBuilder()
-            .setLabel('🐛 Report Bug on GitHub')
+        const discordButton = new ButtonBuilder()
+            .setLabel('🐛 Report Bug on Discord')
             .setStyle(ButtonStyle.Link)
-            .setURL('https://github.com/codebymitch/TitanBot/issues');
+            .setURL('https://discord.gg/V7EuJ6k5n8');
 
-        const bugRow = new ActionRowBuilder().addComponents(githubButton);
+        const bugRow = new ActionRowBuilder().addComponents(discordButton);
 
         const bugReportEmbed = createEmbed({
             title: '🐛 Bug Report',
-            description: 'Found a bug? Please report it on our GitHub Issues page!\n\n' +
+            description: 'Found a bug? Join our Discord and let the team know!\n\n' +
                 '**When reporting a bug, please include:**\n' +
                 '• 📝 Detailed description of the issue\n' +
                 '• 📋 Steps to reproduce the problem\n' +
@@ -60,7 +60,7 @@ export const helpBugReportButton = {
             color: 'error'
         });
         bugReportEmbed.setFooter({
-            text: 'TitanBot Bug Reporting System',
+            text: 'Quancy Bug Reporting System',
             iconURL: client.user.displayAvatarURL()
         });
         bugReportEmbed.setTimestamp();

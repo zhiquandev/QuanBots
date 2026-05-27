@@ -13,7 +13,7 @@ import { checkBirthdays } from './services/birthdayService.js';
 import { checkGiveaways } from './services/giveawayService.js';
 import { loadCommands, registerCommands as registerSlashCommands } from './handlers/commandLoader.js';
 
-class TitanBot extends Client {
+class QuancyBot extends Client {
   constructor() {
     super({
       intents: [
@@ -46,7 +46,7 @@ class TitanBot extends Client {
 
   async start() {
     try {
-      startupLog('Starting TitanBot...');
+      startupLog('Starting Quancy...');
       await new Promise(resolve => setTimeout(resolve, 1000));
       
       startupLog('Initializing database...');
@@ -184,7 +184,7 @@ class TitanBot extends Client {
 
     app.get('/', (req, res) => {
       res.status(200).json({ 
-        message: 'TitanBot System Online',
+        message: 'Quancy System Online',
         version: '2.0.0',
         timestamp: new Date().toISOString()
       });
@@ -356,7 +356,7 @@ class TitanBot extends Client {
 }
 
 try {
-  const bot = new TitanBot();
+  const bot = new QuancyBot();
   
   const setupShutdown = () => {
     process.on('SIGTERM', () => bot.shutdown('SIGTERM'));
@@ -380,7 +380,7 @@ try {
   process.exit(1);
 }
 
-export default TitanBot;
+export default QuancyBot;
 
 
 

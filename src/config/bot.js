@@ -22,12 +22,14 @@ export const botConfig = {
     // 3 = Watching
     // 4 = Custom
     // 5 = Competing
+    // NOTE: The dynamic /help | {users} users, {servers} guilds status
+    // is set automatically in src/events/ready.js via updateDynamicPresence().
     activities: [
       {
-        // Text users will see (example: "Playing /help | Titan Bot").
-        name: "Made with Quan Developer",
-        // Activity type number (0 = Playing).
-        type: 0, 
+        // Fallback shown before ready event fires.
+        name: "/help | Made By Quancy",
+        // Activity type number (3 = Watching).
+        type: 3,
       },
     ],
   },
